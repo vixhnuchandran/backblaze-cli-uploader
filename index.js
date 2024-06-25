@@ -70,8 +70,6 @@ const uploadFile = async (filePath) => {
         },
       });
 
-      console.log("File uploaded successfully.");
-      console.log("File ID: ", uploadResponse.data.fileId);
       const fileUrl = `https://f005.backblazeb2.com/file/${bucketName}/${objectKey}`;
       return { fileUrl, fileId: uploadResponse.data.fileId };
     } catch (err) {
