@@ -94,35 +94,35 @@ const promptUser = (query) => {
   }));
 };
 
-const downloadFile = async (fileUrl, fileName) => {
-  try {
-    const response = await axios.get(fileUrl, {
-      responseType: "arraybuffer",
-      headers: {
-        Authorization: authToken,
-      },
-    });
+// const downloadFile = async (fileUrl, fileName) => {
+//   try {
+//     const response = await axios.get(fileUrl, {
+//       responseType: "arraybuffer",
+//       headers: {
+//         Authorization: authToken,
+//       },
+//     });
 
-    const downloadPath = path.join(__dirname,fileName);
-    await fs.writeFile(downloadPath, response.data);
-    console.log(`File downloaded successfully to ${downloadPath}`);
-  } catch (err) {
-    console.error("Error downloading file:", err.response ? err.response.data : err.message);
-  }
-};
+//     const downloadPath = path.join(__dirname,fileName);
+//     await fs.writeFile(downloadPath, response.data);
+//     console.log(`File downloaded successfully to ${downloadPath}`);
+//   } catch (err) {
+//     console.error("Error downloading file:", err.response ? err.response.data : err.message);
+//   }
+// };
 
 const main = async () => {
   const { fileUrl, fileId } = await uploadFile(filePath);
   if (fileUrl) {
     console.log(`File URL: ${fileUrl}`);
 
-    const userResponse = await promptUser("Do you want to download the file? (Y/N): ");
-    if (userResponse.trim().toUpperCase() === 'Y') {
-      const fileName = path.basename(filePath).replace(/\s/g, "");
-      await downloadFile(fileUrl, fileName);
-    } else {
-      console.log("Download skipped.");
-    }
+    // const userResponse = await promptUser("Do you want to download the file? (Y/N): ");
+    // if (userResponse.trim().toUpperCase() === 'Y') {
+    //   const fileName = path.basename(filePath).replace(/\s/g, "");
+    //   await downloadFile(fileUrl, fileName);
+    // } else {
+    //   console.log("Download skipped.");
+    // }
   }
 };
 
