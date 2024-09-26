@@ -1,26 +1,17 @@
-# bblaze-upload-cmd
+# Backblaze CLI Uploader
+
+**Backblaze CLI Uploader** is a command-line tool designed for uploading files to Backblaze B2 Cloud Storage with ease. It allows you to interact with Backblaze directly from your terminal, simplifying file upload and management.
+
+## Features
+
+- **CLI Upload**: Upload files to Backblaze B2 from the command line.
+- **File Management**: Manage file uploads without leaving the terminal.
+- **Automated Versioning**: Supports Backblaze's automatic file versioning.
+- **Easy Configuration**: Configure Backblaze credentials via environment variables.
 
 ## Installation
 
-To install the necessary dependencies, use [pnpm](https://pnpm.io/):
+To install the necessary dependencies, use `pnpm`:
 
-```
+```bash
 pnpm install
-```
-
-## Usage
-
-To use this tool, follow these steps:
-
-1. Ensure you have installed the dependencies as mentioned above.
-2. Run the command with Node.js, specifying the path to the file you want to upload.
-
-Example:
-
-```
-node index.js --file /path/to/file
-```
-
-Replace `/path/to/file` with the actual path to the file you wish to upload.
-
----
